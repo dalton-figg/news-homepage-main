@@ -1,0 +1,7 @@
+// Convert pixel units to rems
+// @param  {Number} $px The pixel value
+// @param  {Number} $base The base font size of the root element
+// @return {Number} The pixel value divided by the base value
+
+@function calculateRem($px, $base: 16)
+  @return calc($px / $base) * 1rem

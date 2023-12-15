@@ -1,0 +1,179 @@
+// SASS
+
+@import "../scss/helpers/base"
+
+// -- Reset + Global Styles
+
+*,
+::before,
+::after
+  // better box-sizing + no additional spacings
+  box-sizing: border-box
+  margin: 0
+  padding: 0
+
+body
+  // fix typography
+  line-height: 1.5
+  font-size: calculateRem(15)
+  font-family: $font-primary
+  // center the content
+  margin: 0 auto
+  @include max-width(1440px)
+
+img
+  // basic reset for consistent styles + more obvious alt tags + maintain aspect ratios
+  max-width: 100%
+  height: auto
+  display: block
+  font-style: italic
+  object-fit: cover
+
+// -- Page Styles
+
+// - Navigation
+
+.primary-header
+  margin: 0 auto
+  padding-block: calculateRem(48)
+  // calculates correct size by multiplying the number of cols by the width of one col, and adding the value of the gap - (number of cols - 1)
+  // @include max-width(calc(calc(350px * 3) + calc(1.5rem * 2)))
+  @include max-width($grid-container-width)
+
+.primary-navbar__list
+  // make all the navbar items be aligned side by side with a gap
+  display: flex
+  list-style: none
+  align-items: center
+  gap: 2rem
+
+.primary-navbar__item--logo
+  margin-right: auto
+
+.primary-navbar__link
+  transition: color 0.35s ease
+  // remove default link styling
+  @include link-reset($clr-neutral-300)
+
+.primary-navbar__link:where(:hover, :focus)
+  color: $clr-primary-600
+
+// - Grid
+
+.grid-container
+  // set up 3 column grid for page
+  display: grid
+  gap: calculateRem(48) $grid-gap
+  place-content: center
+  grid-template-columns: repeat($grid-cols, $grid-col-width)
+  // grid-template-rows: repeat(2, 1fr)
+  grid-template-areas: "header header aside" "list list list"
+
+.featured-article
+  // declare correct positions
+  grid-area: header
+
+.list-articles
+  // declare correct positions
+  grid-area: list
+
+// -- Grid Item Styles
+
+// - Featured Article
+
+.featured-article__content
+  // basic fixes to positioning
+  display: flex
+  justify-content: space-between
+  padding-top: calculateRem(24)
+
+.featured-article__title
+  font-size: calculateRem(48)
+  // reset line-height - looks very tight on the design 
+  line-height: 1
+  @include max-width(325px)
+
+.featured-article__copy
+  color: $clr-neutral-300
+  @include max-width(350px)
+
+.featured-article__cta
+  // add transition for hover effect and increase the spacing
+  transition: all 0.35s ease
+  margin-top: calculateRem(42)
+  // style the button correctly
+  height: 50px
+  @include max-width(180px)
+  background: $clr-primary-600
+  // center content
+  display: grid
+  place-items: center
+  text-align: center
+  // fix anchor tag styles
+  @include link-reset($clr-neutral-900)
+  // other typography styles
+  text-transform: uppercase
+  letter-spacing: 2px
+
+// :where(:hover, :focus) accounts for both states and keyboard accessibility without having to repeat the selector
+
+.featured-article__cta:where(:hover, :focus)
+  background: $clr-neutral-100
+  color: $clr-neutral-900
+
+// - Aside Articles
+
+.aside-articles
+  background: $clr-neutral-100
+  // add correct spacings
+  padding: calculateRem(24) calculateRem(16)
+
+// fix typography and color styles
+
+.aside-articles__title
+  font-size: calculateRem(32)
+  color: $clr-primary-500
+  // add extra spacings - there is an argument to make here that this entire section should be using flex/grid and gaps
+  padding-bottom: calculateRem(24)
+
+.aside-articles__subtitle
+  color: $clr-neutral-900
+
+.aside-articles__copy
+  color: $clr-neutral-300
+  // again, adding additional spacing here with paddings which probably isn't the best practice
+  padding-top: calculateRem(8)
+
+.aside-articles__seperator
+  // adds spacing between each article
+  margin-block: calculateRem(24)
+  // change hr color, accounting for most browsers
+  color: $clr-neutral-300
+  background: $clr-neutral-300
+  border-color: $clr-neutral-300
+
+// - List Articles
+
+.list-articles
+  display: flex
+  // space-between instead of using a subgrid here, could utilise the existing grid for this as it follow the same pattern
+  justify-content: space-between
+
+.list-article
+  // fix spacing and size
+  display: flex
+  gap: calculateRem(24)
+  @include max-width(350px)
+
+.list-article__number
+  // typography changes
+  color: $clr-neutral-700
+  font-weight: bold
+  font-size: calculateRem(32)
+
+.list-article__title
+  padding-block: calculateRem(6)
+  font-size: calculateRem(20)  
+
+.list-article__copy
+  color: $clr-neutral-300

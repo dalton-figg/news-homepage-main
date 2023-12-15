@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Meta + SEO -->
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Frontend Mentor | News Homepage</title>
+
+    <!-- Favicon -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+
+    <!-- Google Fonts -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Custom Stylesheets -->
+
+    <link rel="stylesheet" href="css/index.css" />
+  </head>
+  <body>
+    <header class="primary-header">
+      <nav class="primary-navbar">
+        <ul class="primary-navbar__list">
+          <li class="primary-navbar__item primary-navbar__item--logo">
+            <a href="#" class="primary-navbar__link">
+              <img
+                src="/assets/images/logo.svg"
+                width="65"
+                height="40"
+                alt="News page logo"
+              />
+            </a>
+          </li>
+          <li class="primary-navbar__item">
+            <a href="#" class="primary-navbar__link">Home</a>
+          </li>
+          <li class="primary-navbar__item">
+            <a href="#" class="primary-navbar__link">New</a>
+          </li>
+          <li class="primary-navbar__item">
+            <a href="#" class="primary-navbar__link">Popular</a>
+          </li>
+          <li class="primary-navbar__item">
+            <a href="#" class="primary-navbar__link">Trending</a>
+          </li>
+          <li class="primary-navbar__item">
+            <a href="#" class="primary-navbar__link">Categories</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main class="grid-container">
+      <section class="featured-article">
+        <picture>
+          <source
+            srcset="/assets/images/image-web-3-desktop.jpg"
+            media="(min-width: 768px)"
+            width="724"
+            height="297"
+            alt="Colorful arrangement of various shapes"
+          />
+          <img
+            src="/assets/images/image-web-3-mobile.jpg"
+            width="686"
+            height="600"
+            alt="Colorful arrangement of various shapes"
+          />
+        </picture>
+
+        <div class="featured-article__content">
+          <h1 class="featured-article__title">The Bright Future of Web 3.0?</h1>
+          <div class="featured-article__copy">
+            <p>
+              We dive into the next evolution of the web that claims to put the
+              power of the platforms back into the hands of the people. But is
+              it really fulfilling its promise?
+            </p>
+            <a href="#" class="featured-article__cta">Read more</a>
+          </div>
+        </div>
+      </section>
+      <aside class="aside-articles">
+        <h2 class="aside-articles__title">New</h2>
+        <h3 class="aside-articles__subtitle">Hydrogen VS Electric Cars</h3>
+        <p class="aside-articles__copy">
+          Will hydrogen-fueled cars ever catch up to EVs?
+        </p>
+        <hr class="aside-articles__seperator" />
+        <h3 class="aside-articles__subtitle">The Downsides of AI Artistry</h3>
+        <p class="aside-articles__copy">
+          What are the possible adverse effects of on-demand AI image
+          generation?
+        </p>
+        <hr class="aside-articles__seperator" />
+        <h3 class="aside-articles__subtitle">Is VC Funding Drying Up?</h3>
+        <p class="aside-articles__copy">
+          Private funding by VC firms is down 50% YOY. We take a look at what
+          that means.
+        </p>
+      </aside>
+      <section class="list-articles">
+        <article class="list-article">
+          <img
+            src="/assets/images/image-retro-pcs.jpg"
+            width="100"
+            height="153"
+            alt="Mini retro PC and VHS tapes"
+          />
+          <div>
+            <p class="list-article__number">01</p>
+            <h2 class="list-article__title">Reviving Retro PCs</h2>
+            <p class="list-article__copy">What happens when old PCs are given modern upgrades?</p>
+          </div>
+        </article>
+        <article class="list-article">
+          <img
+            src="/assets/images/image-top-laptops.jpg"
+            width="100"
+            height="153"
+            alt="RGB laptop keyboard glowing red"
+          />
+          <div>
+            <p class="list-article__number">02</p>
+            <h2 class="list-article__title">Top 10 Laptops of 2022</h2>
+            <p class="list-article__copy">Our best picks for various needs and budgets.</p>
+          </div>
+        </article>
+        <article class="list-article">
+          <img
+            src="/assets/images/image-gaming-growth.jpg"
+            width="100"
+            height="153"
+            alt="Hand throwing controller upwards"
+          />
+          <div>
+            <p class="list-article__number">03</p>
+            <h2 class="list-article__title">The Growth of Gaming</h2>
+            <p class="list-article__copy">How the pandemic has sparked fresh opportunities.</p>
+          </div>
+        </article>
+      </section>
+    </main>
+  </body>
+</html>

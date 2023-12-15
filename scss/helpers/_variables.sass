@@ -1,0 +1,31 @@
+// -- Colors
+
+// - Primary
+
+$clr-primary-600: hsl(5, 85%, 63%)
+$clr-primary-500: hsl(35, 77%, 62%)
+
+// - Neutral
+
+$clr-neutral-900: hsl(36, 100%, 99%)
+$clr-neutral-700: hsl(233, 8%, 79%)
+$clr-neutral-300: hsl(236, 13%, 42%)
+$clr-neutral-100: hsl(240, 100%, 5%)
+
+// -- Typography
+
+// includes full fontstack for system-ui on all operating systems as well as a full fallback to sans-serif (or otherwise) 
+
+$font-primary: "Inter", "Arial", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"
+
+// -- Grid
+
+// these variables allow for full control of any grid, and could be used in a grid-container mixin to further optimize the code
+
+$grid-cols: 3
+$grid-col-width: 350px
+$grid-gap: 1.5rem
+
+// calculates correct size by multiplying the number of cols by the width of one col, and adding the value of the gap - (number of cols - 1)
+
+$grid-container-width: calc(calc($grid-cols * $grid-col-width) + calc($grid-gap * calc($grid-cols - 1)))
